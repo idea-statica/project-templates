@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "IDEA StatiCa",
+    "classifications": ["ideastatica", "checkbot"],
+    "identity": "ideastatica.bimapifeaclient.01",
+    "name": "ideastatica.bimapifeaclient.01",
+    "shortName": "bimapifeaclient",
+    "tags": {
+        "type": "project",
+        "language": "C#"
+    },
+    "sourceName": "BimApiFeaClient"
+}
