@@ -3,7 +3,7 @@
     "author": "IDEA StatiCa",
     "classifications": ["ideastatica", "checkbot"],
     "identity": "ideastatica.bimapifeaclient.01",
-    "name": "ideastatica.bimapifeaclient.01",
+    "name": "IDEA StatiCa Checkbot Client",
     "shortName": "bimapifeaclient",
     "tags": {
         "type": "project",
