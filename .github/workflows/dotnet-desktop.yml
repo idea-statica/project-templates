@@ -11,7 +11,7 @@ env:
 jobs:
   BuildAndTest:
     name: "Build and Test IOM"
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -32,6 +32,6 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
+        name: IdeaStatiCa.Dotnet.Templates.zip
         path: src/nuget/*.nupkg     
 
