@@ -12,7 +12,7 @@ jobs:
   BuildAndTest:
     name: "Build and Test IOM"
     runs-on: windows-latest
-    
+
     steps:
     - uses: actions/checkout@v2
 
@@ -24,6 +24,14 @@ jobs:
     - name: Install dependencies
       run: dotnet restore src/IdeaStatiCa.Dotnet.Templates.csproj
 
-    - name: Build
-      run: dotnet build src/IdeaStatiCa.Dotnet.Templates.csproj --configuration Release --no-restore
+    - name: pack
+      run: dotnet build src/IdeaStatiCa.Dotnet.Templates.csproj --configuration Release
+
+    - name: pack
+      run: dotnet pack src/IdeaStatiCa.Dotnet.Templates.csproj --configuration Release -o src/nuget --no-restore
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: src/nuget/*.nupkg     
 
