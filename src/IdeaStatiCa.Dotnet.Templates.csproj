@@ -5,7 +5,7 @@
     <PackageId>IdeaStatiCa.Dotnet.Templates</PackageId>
     <Title>IDEA StatiCa Templates</Title>
     <Authors>IDEA StatiCa</Authors>
-    <Description>Templates to use when creating an application for Adatum Corporation.</Description>
+    <Description>Templates to use when creating IDEA StatiCa Checkbot plugins.</Description>
     <PackageTags>dotnet-new;templates;ideastatica;checkbot</PackageTags>
     <TargetFramework>netstandard2.0</TargetFramework>
 
