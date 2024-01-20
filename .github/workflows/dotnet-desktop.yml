@@ -21,9 +21,10 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Copy BimApiFeaClient
-      run: cp src/templates/BimApiFeaClient src/templates/BimApiClientApp -r
-      run: rm src/templates/BimApiClientApp/.template.config -r
+    - name: Copy BimApiFeaClient to BimApiClientApp
+      run: |
+        cp src/templates/BimApiFeaClient src/templates/BimApiClientApp -r
+        rm src/templates/BimApiClientApp/.template.config -r
 
     - name: Install dependencies
       run: dotnet restore src/IdeaStatiCa.Dotnet.Templates.csproj
