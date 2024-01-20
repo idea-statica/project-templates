@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "IDEA StatiCa",
+    "classifications": ["ideastatica", "checkbot"],
+    "identity": "ideastatica.bimapifeaapp.01",
+    "name": "IDEA StatiCa Checkbot Client FEA App",
+    "shortName": "bimapifeaapp",
+    "tags": {
+        "type": "solution",
+        "language": "C#"
+    },
+    "sourceName": "BimApiClientApp",
+    "guids": [
+      "5CFF1413-B818-42E0-80C1-7E3F8AB1D5EA",
+      "C889F6D0-FBD3-4ADA-99BD-8ABEC22974E8"
+    ]
+}
