@@ -24,7 +24,7 @@ jobs:
     - name: Copy BimApiFeaClient to BimApiClientApp
       run: |
         cp src/templates/BimApiFeaClient src/templates/BimApiClientApp -r
-        rm src/templates/BimApiClientApp/.template.config -r
+        rm src/templates/BimApiClientApp/BimApiFeaClient/.template.config -r
 
     - name: Install dependencies
       run: dotnet restore src/IdeaStatiCa.Dotnet.Templates.csproj
