@@ -1,4 +1,4 @@
-name: .NET build verification
+name: .NET build which creates nuget package with IDEA StatiCa project templates
 
 on:
   push:
