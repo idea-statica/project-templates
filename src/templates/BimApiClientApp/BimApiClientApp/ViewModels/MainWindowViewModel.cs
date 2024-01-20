@@ -108,7 +108,7 @@ namespace BimApiClientApp.ViewModels
 			{
 				FeaApi = new FeaApi();
 
-				CheckbotTask = Task.Run(() => BimApiFeaClientTemplate.CheckBotRunner.Run(Path.Combine(IdeaStatiCa, "IdeaCheckbot.exe"), FeaApi, Logger));
+				CheckbotTask = Task.Run(() => BimApiFeaClient.CheckBotRunner.Run(Path.Combine(IdeaStatiCa, "IdeaCheckbot.exe"), FeaApi, Logger));
 			}
 			catch (Exception ex)
 			{

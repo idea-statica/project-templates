@@ -19,10 +19,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BimApiFeaClientTemplate\BimApiFeaClientTemplate.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Update="appsettings.json">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
@@ -30,6 +26,10 @@
 
 	<ItemGroup>
 	  <Folder Include="Commands\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BimApiFeaClient\BimApiFeaClient.csproj" />
 	</ItemGroup>
 
 </Project>
