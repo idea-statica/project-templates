@@ -17,16 +17,16 @@
         "datatype": "choice",
         "choices": [
           {
-            "choice": "net6.0",
-            "description": "Target net6.0"
+            "choice": "net6.0-windows",
+            "description": "Target net6.0-windows"
           },
           {
             "choice": "net48",
             "description": "Target net48"
           }          
         ],
-        "replaces": "net6.0",
-        "defaultValue": "net6.0"
+        "replaces": "net6.0-windows",
+        "defaultValue": "net6.0-windows"
       }
     }
 }

@@ -10,6 +10,25 @@
         "language": "C#"
     },
     "sourceName": "BimApiClientApp",
+    "symbols": {
+      "Framework": {
+        "type": "parameter",
+        "description": "The target framework for the project.",
+        "datatype": "choice",
+        "choices": [
+          {
+            "choice": "net6.0-windows",
+            "description": "Target net6.0-windows"
+          },
+          {
+            "choice": "net48",
+            "description": "Target net48"
+          }          
+        ],
+        "replaces": "net6.0-windows",
+        "defaultValue": "net6.0-windows"
+      }
+    },
     "guids": [
       "5CFF1413-B818-42E0-80C1-7E3F8AB1D5EA",
       "C889F6D0-FBD3-4ADA-99BD-8ABEC22974E8"
