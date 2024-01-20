@@ -7,7 +7,7 @@ on:
 
 env:
   DOTNET_VERSION: '6.0.x'
-  package_version: '1.2.3'
+  package_version: 1.0.${{ github.run_number }}
 
 jobs:
   BuildAndTest:
@@ -36,10 +36,10 @@ jobs:
     - name: Install dependencies
       run: dotnet restore src/IdeaStatiCa.Dotnet.Templates.csproj
 
-    - name: pack
+    - name: Build IdeaStatiCa.Dotnet.Templates.csproj
       run: dotnet build src/IdeaStatiCa.Dotnet.Templates.csproj --configuration Release
 
-    - name: pack
+    - name: Pack IdeaStatiCa.Dotnet.Templates.csproj
       run: dotnet pack src/IdeaStatiCa.Dotnet.Templates.csproj --configuration Release -o src/nuget --no-restore
 
     - uses: actions/upload-artifact@v4
