@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using BimApiFeaClient.Importers;
+using BimApiFeaClientTemplate.Importers;
 using CheckBotRunner.FeaApi;
 using IdeaStatiCa.BimApiLink;
 using IdeaStatiCa.Plugin;
@@ -20,17 +20,20 @@ namespace BimApiFeaClient
 			}
 
 			logger.LogInformation($"Starting plugin with checkbot location {checkbotLocation}");
-			var workingDirectory = Path.GetFullPath("BimApiExampleProj");
+			var workingDirectory = feaApi.GetProjectDir();
 			if (!Directory.Exists(workingDirectory))
 			{
+				logger.LogInformation($"Creating a new project dir '{workingDirectory}'");
 				Directory.CreateDirectory(workingDirectory);
+			}
+			else
+			{
+				logger.LogInformation($"Using an existing project dir '{workingDirectory}'");
 			}
 
 			try
 			{
 				GrpcBimHostingFactory bimHostingFactory = new GrpcBimHostingFactory();
-
-				logger.LogInformation($"Project working directory is {workingDirectory}");
 
 				var container = BuildContainer(bimHostingFactory.InitGrpcClient(logger), feaApi);
 
