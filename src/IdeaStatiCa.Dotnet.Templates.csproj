@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0</PackageVersion>
+    <Version>1.0</Version>
     <PackageId>IdeaStatiCa.Dotnet.Templates</PackageId>
     <Title>IDEA StatiCa Templates</Title>
     <Authors>IDEA StatiCa</Authors>
