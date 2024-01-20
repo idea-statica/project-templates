@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using BimApiFeaClientTemplate.Importers;
+using BimApiFeaClient.Importers;
 using CheckBotRunner.FeaApi;
 using IdeaStatiCa.BimApiLink;
 using IdeaStatiCa.Plugin;
