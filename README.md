@@ -74,6 +74,8 @@ dotnet new bimapifeaapp -F net48 -o MyCheckbotFeaPluginApp
 
  ![Create new project](media/new-project-vs-wizard.png?raw=true "Create new project")
 
+  ![MyCheckbotFeaPluginApp](media/MyCheckbotFeaPluginApp.png?raw=true "MyCheckbotFeaPluginApp")
+
 the second command creates only csprj project (not whole application)
 
 ```
