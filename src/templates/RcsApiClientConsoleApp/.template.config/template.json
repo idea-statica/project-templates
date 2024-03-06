@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "IDEA StatiCa",
+    "classifications": ["ideastatica", "rcs", "api"],
+    "identity": "ideastatica.rcsclient.01",
+    "name": "IDEA StatiCa RCS Rest API client console App",
+    "shortName": "rcsclientconsole",
+    "tags": {
+        "type": "solution",
+        "language": "C#"
+    },
+    "sourceName": "RcsApiClientConsoleApp",
+    "symbols": {
+      "Framework": {
+        "type": "parameter",
+        "description": "The target framework for the project.",
+        "datatype": "choice",
+        "choices": [
+          {
+            "choice": "net6.0",
+            "description": "Target net6.0"
+          },
+          {
+            "choice": "net48",
+            "description": "Target net48"
+          }          
+        ],
+        "replaces": "net6.0",
+        "defaultValue": "net6.0"
+      }
+    },
+    "guids": [
+      "4888C240-B064-480A-95AA-A84ABBFEBDB4"
+    ]
+}

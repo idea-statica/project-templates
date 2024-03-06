@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Projects\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdeaStatiCa.PluginLogger" Version="*" />
+    <PackageReference Include="IdeaStatiCa.PluginsTools.Windows" Version="*" />
+    <PackageReference Include="IdeaStatiCa.RcsClient" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Projects\Project1.IdeaRcs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
