@@ -1,5 +1,5 @@
-﻿using IdeaStatiCa.BimApiLink.BimApi;
-using IdeaStatiCa.BimApi;
+﻿using IdeaStatiCa.BimApi;
+using IdeaStatiCa.BimApiLink.BimApi;
 
 namespace BimApiFeaLink.BimApi
 {

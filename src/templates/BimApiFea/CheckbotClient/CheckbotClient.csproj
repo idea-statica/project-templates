@@ -8,7 +8,6 @@
 		<PackageReference Include="IdeaStatiCa.BimApiLink" Version="*" />
 		<PackageReference Include="IdeaStatiCa.Plugin" Version="*" />
 		<PackageReference Include="IdeaStatiCa.Public" Version="*" />
-		<PackageReference Include="Autofac" Version="8.0.0" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
 	</ItemGroup>
 
