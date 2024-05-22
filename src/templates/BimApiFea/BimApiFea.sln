@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BimApiFeaClientApp", "BimApiFeaClientApp\BimApiFeaClientApp.csproj", "{5CFF1413-B818-42E0-80C1-7E3F8AB1D5EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BimApiFeaApp", "BimApiFeaApp\BimApiFeaApp.csproj", "{5CFF1413-B818-42E0-80C1-7E3F8AB1D5EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BimApiFeaClient", "BimApiFeaClient\BimApiFeaClient.csproj", "{C889F6D0-FBD3-4ADA-99BD-8ABEC22974E8}"
 EndProject
