@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<PackageType>Template</PackageType>
+		<PackageVersion>1.0</PackageVersion>
+		<PackageId>IdeaStatica.BimApiClient.Cad.Template</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IdeaStatiCa.ItemsSorter" Version="*" />
+		<PackageReference Include="IdeaStatica.BimApiLink" Version="*" />
+		<PackageReference Include="IdeaStatiCa.Plugin" Version="*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="FeaApi\**" />
+		<EmbeddedResource Remove="FeaApi\**" />
+		<None Remove="FeaApi\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="BimApiLink\" />
+		<Folder Include="BulkSelection\" />
+	</ItemGroup>
+
+</Project>
