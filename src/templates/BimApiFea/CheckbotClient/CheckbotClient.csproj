@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IdeaStatiCa.BimApiLink" Version="*" />
+		<PackageReference Include="IdeaStatiCa.Plugin" Version="*" />
+		<PackageReference Include="IdeaStatiCa.Public" Version="*" />
+		<PackageReference Include="Autofac" Version="8.0.0" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BimApiFeaLink\BimApiFeaLink.csproj" />
+		<ProjectReference Include="..\FeaApi\FeaApi.csproj" />
+	</ItemGroup>
+
+</Project>

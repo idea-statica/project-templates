@@ -1,11 +1,11 @@
-﻿using CheckBotRunner.FeaApi;
+﻿using FeaApi;
 using IdeaStatiCa.BimApi;
 using IdeaStatiCa.BimApiLink.BimApi;
 using IdeaStatiCa.BimApiLink.Importers;
 
-namespace BimApiFeaClient.Importers
+namespace BimApiFeaLink.Importers
 {
-	internal class NodeImporter : IntIdentifierImporter<IIdeaNode>
+	public class NodeImporter : IntIdentifierImporter<IIdeaNode>
 	{
 		private readonly IFeaGeometryApi geometry;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CheckBotRunner.FeaApi
+namespace FeaApi
 {
 	public interface IFeaGeometryApi
 	{

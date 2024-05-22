@@ -1,10 +1,10 @@
-﻿using BimApiFeaClient.BimApi;
-using IdeaStatiCa.BimApiLink.Importers;
+﻿using BimApiFeaLink.BimApi;
 using IdeaStatiCa.BimApi;
+using IdeaStatiCa.BimApiLink.Importers;
 
-namespace BimApiFeaClient.Importers
+namespace BimApiFeaLink.Importers
 {
-	internal class CrossSectionImporter : IntIdentifierImporter<IIdeaCrossSection>
+	public class CrossSectionImporter : IntIdentifierImporter<IIdeaCrossSection>
 	{
 		public CrossSectionImporter(/*TODO pass API using DI*/)
 		{

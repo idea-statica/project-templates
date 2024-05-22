@@ -1,4 +1,4 @@
-﻿namespace CheckBotRunner.FeaApi
+﻿namespace FeaApi
 {
 	public interface IFeaMember
 	{

@@ -1,6 +1,6 @@
 ﻿using MathNet.Spatial.Euclidean;
 
-namespace CheckBotRunner.FeaApi
+namespace FeaApi
 {
 	public interface IFeaNode
 	{

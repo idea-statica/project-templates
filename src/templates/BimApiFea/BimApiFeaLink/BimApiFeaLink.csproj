@@ -5,12 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
+    <Compile Remove="BimApiLink\**" />
+    <EmbeddedResource Remove="BimApiLink\**" />
+    <None Remove="BimApiLink\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="IdeaStatica.BimApi" Version="*" />
     <PackageReference Include="IdeaStatica.BimApiLink" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BimApiLink\" />
+    <ProjectReference Include="..\FeaApi\FeaApi.csproj" />
   </ItemGroup>
 </Project>

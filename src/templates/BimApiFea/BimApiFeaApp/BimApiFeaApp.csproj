@@ -30,6 +30,8 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\BimApiFeaLink\BimApiFeaLink.csproj" />
+	  <ProjectReference Include="..\CheckbotClient\CheckbotClient.csproj" />
+	  <ProjectReference Include="..\FeaApi\FeaApi.csproj" />
 	</ItemGroup>
 
 </Project>

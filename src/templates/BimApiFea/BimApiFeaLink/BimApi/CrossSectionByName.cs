@@ -1,7 +1,7 @@
 ﻿using IdeaStatiCa.BimApiLink.BimApi;
 using IdeaStatiCa.BimApi;
 
-namespace BimApiFeaClient.BimApi
+namespace BimApiFeaLink.BimApi
 {
 	internal class CrossSectionByName : IdeaCrossSectionByName
 	{

@@ -2,9 +2,9 @@
 using IdeaStatiCa.BimApiLink.Importers;
 using IdeaStatiCa.BimApi;
 
-namespace BimApiFeaClient.Importers
+namespace BimApiFeaLink.Importers
 {
-	internal class MaterialImporter : IntIdentifierImporter<IIdeaMaterial>
+	public class MaterialImporter : IntIdentifierImporter<IIdeaMaterial>
 	{
 		public override IIdeaMaterial Create(int id)
 		{

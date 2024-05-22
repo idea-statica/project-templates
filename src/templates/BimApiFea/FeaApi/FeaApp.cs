@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CheckBotRunner.FeaApi
+namespace FeaApi
 {
 	public interface IFeaApi
 	{
@@ -14,7 +14,7 @@ namespace CheckBotRunner.FeaApi
 		IFeaGeometryApi Geometry { get; }
 	}
 
-	public class FeaApi : IFeaApi
+	public class FeaApp : IFeaApi
 	{
 		public IFeaGeometryApi Geometry { get; } = new FeaGeometryApi();
 

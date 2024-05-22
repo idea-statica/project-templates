@@ -1,9 +1,8 @@
 ﻿using BimApiClientApp.Models;
-using CheckBotRunner.FeaApi;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using FeaApi;
 using IdeaStatiCa.Plugin;
-using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -106,7 +105,7 @@ namespace BimApiClientApp.ViewModels
 			Logger.LogInformation("MainWindowViewModel.OpenCheckbot is starting");
 			try
 			{
-				FeaApi = new FeaApi();
+				FeaApi = new FeaApp();
 
 				CheckbotTask = Task.Run(() => BimApiFeaClient.CheckBotRunner.Run(Path.Combine(IdeaStatiCa, "IdeaCheckbot.exe"), FeaApi, Logger));
 			}

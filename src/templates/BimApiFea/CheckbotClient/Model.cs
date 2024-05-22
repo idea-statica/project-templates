@@ -1,4 +1,4 @@
-﻿using CheckBotRunner.FeaApi;
+﻿using FeaApi;
 using IdeaRS.OpenModel;
 using IdeaStatiCa.BimApi;
 using IdeaStatiCa.BimApiLink.Identifiers;

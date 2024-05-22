@@ -1,14 +1,14 @@
-﻿using BimApiFeaClient.BimApi;
-using CheckBotRunner.FeaApi;
+﻿using BimApiFeaLink.BimApi;
+using FeaApi;
 using IdeaStatiCa.BimApi;
 using IdeaStatiCa.BimApiLink.BimApi;
 using IdeaStatiCa.BimApiLink.Importers;
 using MathNet.Spatial.Euclidean;
 using System.Collections.Generic;
 
-namespace BimApiFeaClient.Importers
+namespace BimApiFeaLink.Importers
 {
-	internal class MemberImporter : IntIdentifierImporter<IIdeaMember1D>
+	public class MemberImporter : IntIdentifierImporter<IIdeaMember1D>
 	{
 		private readonly IFeaGeometryApi geometry;
 

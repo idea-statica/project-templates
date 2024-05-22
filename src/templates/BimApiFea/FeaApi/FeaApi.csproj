@@ -4,4 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
   </PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="MathNet.Spatial" Version="0.6.0" />
+	</ItemGroup>	
 </Project>
