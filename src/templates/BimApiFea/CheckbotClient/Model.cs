@@ -7,7 +7,7 @@ using IdeaStatiCa.Plugin;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BimApiFeaClient
+namespace CheckbotClient
 {
 	internal class Model : IFeaModel
 	{

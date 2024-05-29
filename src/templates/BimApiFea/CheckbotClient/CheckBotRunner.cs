@@ -8,7 +8,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace BimApiFeaClient
+namespace CheckbotClient
 {
 	public class CheckBotRunner
 	{

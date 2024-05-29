@@ -1,4 +1,5 @@
 ﻿using BimApiClientApp.Models;
+using CheckbotClient;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FeaApi;
@@ -129,7 +130,7 @@ namespace BimApiClientApp.ViewModels
 				var checkBotPath = Path.Combine(IdeaStatiCaSetup, "IdeaCheckbot.exe");
 
 				FeaApi = feaApp;
-				CheckbotTask = Task.Run(() => BimApiFeaClient.CheckBotRunner.Run(checkBotPath, FeaApi, Logger));
+				CheckbotTask = Task.Run(() => CheckBotRunner.Run(checkBotPath, FeaApi, Logger));
 			}
 			catch (Exception ex)
 			{

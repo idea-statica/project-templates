@@ -12,44 +12,37 @@
     "sourceName": "BimApiClientApp",
     "preferNameDirectory": true,
     "symbols": {
-      "BimApiFeaApp": {
+      "projectBimApiFeaApp": {
         "type": "parameter",
         "datatype": "string",
         "defaultValue": "BimApiFeaApp",
         "replaces": "BimApiFeaApp",
-        "description": "WPF application which simulates a FEA application"
+        "description": "WPF application which simulates a FEA application",
+        "fileRename": "BimApiFeaApp"
       },
-      "BimApiFeaLink": {
+      "projectBimApiFeaLink": {
         "type": "parameter",
         "datatype": "string",
         "defaultValue": "BimApiFeaLink",
         "replaces": "BimApiFeaLink",
-        "description": "Implementation of BIM API for converting objects in a FEA Model to BIM API objects"
+        "description": "Implementation of BIM API for converting objects in a FEA Model to BIM API objects",
+        "fileRename": "BimApiFeaLink"
       },
-      "CheckbotClient": {
+      "projectCheckbotClient": {
         "type": "parameter",
         "datatype": "string",
         "defaultValue": "CheckbotClient",
         "replaces": "CheckbotClient",
-        "description": "Responsible for running and communicating with IDEA Checkbot"
+        "description": "Responsible for running and communicating with IDEA Checkbot",
+        "fileRename": "CheckbotClient"
       },
-      "FeaApi": {
+      "projectFeaApi": {
         "type": "parameter",
         "datatype": "string",
         "defaultValue": "FeaApi",
         "replaces": "FeaApi",
-        "description": "Mock of a FEA API"
-      },
-      "solutionName": {
-        "type": "parameter",
-        "datatype": "string",
-        "defaultValue": "BimApiFea",
-        "fileRename": "BimApiFea"
-      },
-      "includeSolution": {
-        "type": "parameter",
-        "datatype": "bool",
-        "defaultValue": "true"
+        "description": "Mock of a FEA API",
+        "fileRename": "FeaApi"
       },
       "Framework": {
         "type": "parameter",
@@ -79,30 +72,23 @@
             }
           },
           {
+            "condition": "(!excludeBimApiFeaLink)",
             "rename": {
               "BimApiFeaLink": "{{projectBimApiFeaLink}}"
             }
           },
           {
+            "condition": "(!excludeCheckbotClient)",
             "rename": {
               "CheckbotClient": "{{projectCheckbotClient}}"
             }
           },
           {
+            "condition": "(!excludeFeaApi)",
             "rename": {
               "FeaApi": "{{projectFeaApi}}"
             }
-          },
-          {
-            "condition": "includeSolution",
-            "modifiers": [
-              {
-                "rename": {
-                  "BimApiFea.sln": "{{solutionName}}.sln"
-                }
-              }
-            ]
-          }                    
+          }
         ]
       }
     ],
