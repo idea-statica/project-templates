@@ -17,32 +17,32 @@ It allows to create a new c# project (or all a solution) for new BIM plugins for
 To check installation of new templates
 
 ```
-dotnet new --list
+dotnet new list
 ```
 
 You should get a list of all templates which are installed on a PC. The should be also
 
 ```
-IDEA StatiCa Checkbot Client                  bimapifeaclient      [C#]        ideastatica/checkbot
-IDEA StatiCa Checkbot Client FEA App          bimapifeaapp         [C#]        ideastatica/checkbot
+IDEA StatiCa Checkbot Client FEA App          bimapifeaapp                [C#]        ideastatica/checkbot
+IDEA StatiCa RCS Rest API client console App  rcsclientconsole            [C#]        ideastatica/rcs/api
 ```
 
 commands  
-dotnet new bimapifeaclient /?
+dotnet new bimapifeaapp /?
 
 or 
 
-dotnet new bimapifeaapp /?
+dotnet new rcsclientconsole /?
 
 show how to use it in .NET CLI
 
 ```
-PS C:\git\project-templates> dotnet new bimapifeaclient /?
-IDEA StatiCa Checkbot Client (C#)
+PS C:\git\project-templates\src\bin\Release> dotnet new bimapifeaapp /?
+IDEA StatiCa Checkbot Client FEA App (C#)
 Author: IDEA StatiCa
 
 Usage:
-  dotnet new bimapifeaclient [options] [template options]
+  dotnet new bimapifeaapp [options] [template options]
 
 Options:
   -n, --name <name>       The name for the output being created. If no name is specified, the name of the output directory is used.
@@ -52,14 +52,26 @@ Options:
   --no-update-check       Disables checking for the template package updates when instantiating a template.
   --project <project>     The project that should be used for context evaluation.
   -lang, --language <C#>  Specifies the template language to instantiate.
-  --type <project>        Specifies the template type to instantiate.
+  --type <solution>       Specifies the template type to instantiate.
 
 Template options:
-  -F, --Framework <net48|net6.0-windows>  The target framework for the project.
-                                          Type: choice
-                                            net6.0-windows  Target net6.0-windows
-                                            net48           Target net48
-                                          Default: net6.0-windows
+  -p, --projectBimApiFeaApp <projectBimApiFeaApp>        WPF application which simulates a FEA application
+                                                         Type: string
+                                                         Default: BimApiFeaApp
+  -pr, --projectBimApiFeaLink <projectBimApiFeaLink>     Implementation of BIM API for converting objects in a FEA Model to BIM API objects
+                                                         Type: string
+                                                         Default: BimApiFeaLink
+  -p:p, --projectCheckbotClient <projectCheckbotClient>  Responsible for running and communicating with IDEA Checkbot
+                                                         Type: string
+                                                         Default: CheckbotClient
+  -p:pr, --projectFeaApi <projectFeaApi>                 Mock of a FEA API
+                                                         Type: string
+                                                         Default: FeaApi
+  -F, --Framework <net48|net6.0-windows>                 The target framework for the project.
+                                                         Type: choice
+                                                           net6.0-windows  Target net6.0-windows
+                                                           net48           Target net48
+                                                         Default: net6.0-windows
 ```
 
 To create a new WPF application *MyCheckbotFeaPluginApp* which runs Idea StatiCa Checkbot and implements basic BIM Api importers in current directory run 
