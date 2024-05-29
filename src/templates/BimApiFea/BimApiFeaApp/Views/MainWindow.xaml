@@ -13,24 +13,33 @@
 		<Style TargetType="TextBlock">
 			<Setter Property="Margin" Value="3" />
 		</Style>
+		<Style TargetType="TextBox">
+			<Setter Property="Margin" Value="3" />
+		</Style>
 	</Window.Resources>
 
 	<DockPanel LastChildFill="True">
-		<StackPanel DockPanel.Dock="Top">
-		<!--Tool bar section-->
-			<StackPanel Orientation="Horizontal">
-				<Button HorizontalAlignment="Left"  Content="Run Checkbot" Command="{Binding OpenCheckbotCmdAsync}"/>
-				<TextBlock Text="{Binding IdeaStatiCa}" IsEnabled="False" />
-			</StackPanel>
-		</StackPanel>
+		<ToolBarTray DockPanel.Dock="Top">
+			<ToolBar >
+				<ToolBarPanel>
+					<Button HorizontalAlignment="Left"  Content="Run Checkbot" Command="{Binding OpenCheckbotCmdAsync}"/>
+					<TextBox Text="{Binding IdeaStatiCaSetup, Mode=TwoWay}"/>
+				</ToolBarPanel>
+				<ToolBarPanel>
+					<TextBlock Margin="5">Project dir</TextBlock>
+					<TextBox Text="{Binding ProjectDir, Mode=TwoWay}"/>
+				</ToolBarPanel>
+			</ToolBar>
+		</ToolBarTray>
+
 
 		<StackPanel DockPanel.Dock="Bottom">
 			<!--Application status bar-->
 			<TextBlock Text="{Binding StatusMessage}"></TextBlock>
 		</StackPanel>
-	  
+
 		<Grid>
-		<!--Main application view -->
+			<!--Main application view -->
 		</Grid>
 	</DockPanel>
 </Window>

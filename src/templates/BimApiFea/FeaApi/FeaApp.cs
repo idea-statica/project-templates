@@ -16,18 +16,24 @@ namespace FeaApi
 
 	public class FeaApp : IFeaApi
 	{
-		public IFeaGeometryApi Geometry { get; } = new FeaGeometryApi();
-
-		/// <inheritdoc cref="IFeaApi.GetProjectDir"/>
-		public string GetProjectDir()
+		public FeaApp()
 		{
 			var projectDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CheckBotRunner");
 			if (!Directory.Exists(projectDir))
 			{
 				Directory.CreateDirectory(projectDir);
 			}
+			ProjectDir = projectDir;
+		}
 
-			return projectDir;
+		public IFeaGeometryApi Geometry { get; } = new FeaGeometryApi();
+
+		public string ProjectDir { get; set; }
+
+		/// <inheritdoc cref="IFeaApi.GetProjectDir"/>
+		public string GetProjectDir()
+		{
+			return ProjectDir;
 		}
 	}
 }

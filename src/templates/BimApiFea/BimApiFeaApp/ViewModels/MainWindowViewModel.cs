@@ -36,19 +36,21 @@ namespace BimApiClientApp.ViewModels
 				throw new Exception("BimApiClientApp.MainWindowViewModel : Logger can not be null");
 			}
 
+			ProjectDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CheckBotRunner"); ;
+
 			Logger = logger;
 			if (Directory.Exists(configuration.IdeaStatiCaDir))
 			{
 				// Checkbot exists
-				IdeaStatiCa = configuration.IdeaStatiCaDir;
+				IdeaStatiCaSetup = configuration.IdeaStatiCaDir;
 				StatusMessage = "Ok";
-				Logger.LogInformation($"BimApiClientApp.MainWindowViewModel is starting. Checkbot is found '{IdeaStatiCa}'");
+				Logger.LogInformation($"BimApiClientApp.MainWindowViewModel is starting. Checkbot is found '{IdeaStatiCaSetup}'");
 			}
 			else
 			{
 				// checkbot doesn;t exist
-				IdeaStatiCa = string.Empty;
-				Logger.LogInformation($"BimApiClientApp.BimApiClientApp failed. Checkbot is not found '{IdeaStatiCa}'");
+				IdeaStatiCaSetup = string.Empty;
+				Logger.LogInformation($"BimApiClientApp.BimApiClientApp failed. Checkbot is not found '{IdeaStatiCaSetup}'");
 				StatusMessage = $"IDEA StatiCa is not in available at'{configuration?.IdeaStatiCaDir}'";
 			}
 
@@ -67,13 +69,24 @@ namespace BimApiClientApp.ViewModels
 		/// <summary>
 		/// Location of IDEA Statica to show
 		/// </summary>
-		public string IdeaStatiCa
+		public string IdeaStatiCaSetup
 		{
 			get { return ideaStatiCaUri; }
 			set
 			{
 				ideaStatiCaUri = value;
-				OnPropertyChanged(nameof(IdeaStatiCa));
+				OnPropertyChanged(nameof(IdeaStatiCaSetup));
+			}
+		}
+
+		string projectDir;
+		public string ProjectDir
+		{
+			get { return projectDir; }
+			set
+			{
+				projectDir = value;
+				OnPropertyChanged(nameof(ProjectDir));
 			}
 		}
 
@@ -90,13 +103,13 @@ namespace BimApiClientApp.ViewModels
 			set
 			{
 				statusMessage = value;
-				OnPropertyChanged(nameof(IdeaStatiCa));
+				OnPropertyChanged(nameof(IdeaStatiCaSetup));
 			}
 		}
 
 		private bool CanOpenCheckbot()
 		{
-			return !string.IsNullOrEmpty(IdeaStatiCa);
+			return !string.IsNullOrEmpty(IdeaStatiCaSetup);
 		}
 
 
@@ -105,9 +118,18 @@ namespace BimApiClientApp.ViewModels
 			Logger.LogInformation("MainWindowViewModel.OpenCheckbot is starting");
 			try
 			{
-				FeaApi = new FeaApp();
+				if (!Directory.Exists(ProjectDir))
+				{
+					Directory.CreateDirectory(ProjectDir);
+				}
 
-				CheckbotTask = Task.Run(() => BimApiFeaClient.CheckBotRunner.Run(Path.Combine(IdeaStatiCa, "IdeaCheckbot.exe"), FeaApi, Logger));
+				var feaApp = new FeaApp();
+				feaApp.ProjectDir = ProjectDir;
+
+				var checkBotPath = Path.Combine(IdeaStatiCaSetup, "IdeaCheckbot.exe");
+
+				FeaApi = feaApp;
+				CheckbotTask = Task.Run(() => BimApiFeaClient.CheckBotRunner.Run(checkBotPath, FeaApi, Logger));
 			}
 			catch (Exception ex)
 			{
