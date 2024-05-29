@@ -2,13 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>{{projectBimApiFeaLink}}</RootNamespace>
+    <AssemblyName>{{projectBimApiFeaLink}}</AssemblyName>    
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="BimApiLink\**" />
-    <EmbeddedResource Remove="BimApiLink\**" />
-    <None Remove="BimApiLink\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="IdeaStatica.BimApi" Version="*" />

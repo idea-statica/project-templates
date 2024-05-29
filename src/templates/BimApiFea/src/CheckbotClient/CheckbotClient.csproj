@@ -2,6 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0-windows</TargetFramework>
+	    <RootNamespace>{{projectCheckbotClient}}</RootNamespace>
+    	<AssemblyName>{{projectCheckbotClient}}</AssemblyName>    	
 	</PropertyGroup>
 
 	<ItemGroup>
