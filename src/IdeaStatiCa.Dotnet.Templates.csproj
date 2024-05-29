@@ -5,8 +5,8 @@
     <PackageId>IdeaStatiCa.Dotnet.Templates</PackageId>
     <Title>IDEA StatiCa Templates</Title>
     <Authors>IDEA StatiCa</Authors>
-    <Description>Templates to use when creating IDEA StatiCa Checkbot plugins.</Description>
-    <PackageTags>dotnet-new;templates;ideastatica;checkbot</PackageTags>
+    <Description>Templates to use when creating IDEA StatiCa plugins.</Description>
+    <PackageTags>dotnet-new;templates;ideastatica;checkbot,rcs</PackageTags>
     <TargetFramework>netstandard2.0</TargetFramework>
 
     <IncludeContentInPack>true</IncludeContentInPack>

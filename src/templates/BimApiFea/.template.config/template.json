@@ -1,0 +1,115 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "IDEA StatiCa",
+    "classifications": ["ideastatica", "checkbot"],
+    "identity": "ideastatica.bimapifeaapp.01",
+    "name": "IDEA StatiCa Checkbot Client FEA App",
+    "shortName": "bimapifeaapp",
+    "tags": {
+        "type": "solution",
+        "language": "C#"
+    },
+    "sourceName": "BimApiClientApp",
+    "preferNameDirectory": true,
+    "symbols": {
+      "projectBimApiFeaApp": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "BimApiFeaApp",
+        "replaces": "BimApiFeaApp",
+        "description": "WPF application which simulates a FEA application",
+        "fileRename": "BimApiFeaApp"
+      },
+      "projectBimApiFeaLink": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "BimApiFeaLink",
+        "replaces": "BimApiFeaLink",
+        "description": "Implementation of BIM API for converting objects in a FEA Model to BIM API objects",
+        "fileRename": "BimApiFeaLink"
+      },
+      "projectCheckbotClient": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "CheckbotClient",
+        "replaces": "CheckbotClient",
+        "description": "Responsible for running and communicating with IDEA Checkbot",
+        "fileRename": "CheckbotClient"
+      },
+      "projectFeaApi": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "FeaApi",
+        "replaces": "FeaApi",
+        "description": "Mock of a FEA API",
+        "fileRename": "FeaApi"
+      },
+      "Framework": {
+        "type": "parameter",
+        "description": "The target framework for the project.",
+        "datatype": "choice",
+        "choices": [
+          {
+            "choice": "net6.0-windows",
+            "description": "Target net6.0-windows"
+          },
+          {
+            "choice": "net48",
+            "description": "Target net48"
+          }          
+        ],
+        "replaces": "net6.0-windows",
+        "defaultValue": "net6.0-windows"
+      }     
+    },
+    "sources": [
+      {
+        "modifiers": [
+          {
+            "condition": "(!excludeBimApiFeaApp)",
+            "rename": {
+              "BimApiFeaApp": "{{projectBimApiFeaApp}}"
+            }
+          },
+          {
+            "condition": "(!excludeBimApiFeaLink)",
+            "rename": {
+              "BimApiFeaLink": "{{projectBimApiFeaLink}}"
+            }
+          },
+          {
+            "condition": "(!excludeCheckbotClient)",
+            "rename": {
+              "CheckbotClient": "{{projectCheckbotClient}}"
+            }
+          },
+          {
+            "condition": "(!excludeFeaApi)",
+            "rename": {
+              "FeaApi": "{{projectFeaApi}}"
+            }
+          }
+        ]
+      }
+    ],
+    "primaryOutputs": [
+      {
+        "path": "{{projectBimApiFeaApp}}/{{projectBimApiFeaApp}}.csproj"
+      },
+      {
+        "path": "{{projectBimApiFeaLink}}/{{projectBimApiFeaLink}}.csproj"
+      },
+      {
+        "path": "{{projectCheckbotClient}}/{{projectCheckbotClient}}.csproj"
+      },
+      {
+        "path": "{{projectFeaApi}}/{{projectFeaApi}}.csproj"
+      }
+    ],
+    "guids": [
+      "27E79556-70C6-4622-875B-9FB526902DCC",
+      "60C061B7-2217-4F5D-B45B-1630AE565BBA",
+      "E92D99B0-1401-469E-903F-AFF41E1E4A20",
+      "C0950A4F-AF5D-4D8E-99AE-05F0DD4600CA"     
+    ]
+}
