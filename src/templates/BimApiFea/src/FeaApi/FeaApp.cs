@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace FeaApi
+﻿namespace FeaApi
 {
 	public interface IFeaApi
 	{
@@ -18,12 +15,6 @@ namespace FeaApi
 	{
 		public FeaApp()
 		{
-			var projectDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CheckBotRunner");
-			if (!Directory.Exists(projectDir))
-			{
-				Directory.CreateDirectory(projectDir);
-			}
-			ProjectDir = projectDir;
 		}
 
 		public IFeaGeometryApi Geometry { get; } = new FeaGeometryApi();

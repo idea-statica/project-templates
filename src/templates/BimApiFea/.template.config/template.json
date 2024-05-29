@@ -10,7 +10,42 @@
         "language": "C#"
     },
     "sourceName": "BimApiClientApp",
+    "preferNameDirectory": true,
     "symbols": {
+      "BimApiFeaApp": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "BimApiFeaApp",
+        "replaces": "BimApiFeaApp",
+        "description": "WPF application which simulates a FEA application"
+      },
+      "BimApiFeaLink": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "BimApiFeaLink",
+        "replaces": "BimApiFeaLink",
+        "description": "Implementation of BIM API for converting objects in a FEA Model to BIM API objects"
+      },
+      "CheckbotClient": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "CheckbotClient",
+        "replaces": "CheckbotClient",
+        "description": "Responsible for running and communicating with IDEA Checkbot"
+      },
+      "FeaApi": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "FeaApi",
+        "replaces": "FeaApi",
+        "description": "Mock of a FEA API"
+      },
+      "solutionName": {
+        "type": "parameter",
+        "datatype": "string",
+        "defaultValue": "BimApiFea",
+        "fileRename": "BimApiFea"
+      },
       "Framework": {
         "type": "parameter",
         "description": "The target framework for the project.",
@@ -27,10 +62,14 @@
         ],
         "replaces": "net6.0-windows",
         "defaultValue": "net6.0-windows"
-      }
+      }     
     },
+
+
     "guids": [
-      "5CFF1413-B818-42E0-80C1-7E3F8AB1D5EA",
-      "C889F6D0-FBD3-4ADA-99BD-8ABEC22974E8"
+      "DA28B9CA-EF31-418B-B6A4-791638C05208",
+      "C5A5C07F-569C-4EC8-9D05-A83A7918A438",
+      "5A4BDD08-64E0-4FDB-977D-34EBDE9197E0",
+      "851EA1DC-2A0A-467F-857C-E54818412DA2"     
     ]
 }
