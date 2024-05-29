@@ -46,6 +46,11 @@
         "defaultValue": "BimApiFea",
         "fileRename": "BimApiFea"
       },
+      "includeSolution": {
+        "type": "parameter",
+        "datatype": "bool",
+        "defaultValue": "true"
+      },
       "Framework": {
         "type": "parameter",
         "description": "The target framework for the project.",
@@ -64,12 +69,61 @@
         "defaultValue": "net6.0-windows"
       }     
     },
-
-
+    "sources": [
+      {
+        "modifiers": [
+          {
+            "condition": "(!excludeBimApiFeaApp)",
+            "rename": {
+              "BimApiFeaApp": "src/{{projectBimApiFeaApp}}"
+            }
+          },
+          {
+            "rename": {
+              "BimApiFeaLink": "src/{{projectBimApiFeaLink}}"
+            }
+          },
+          {
+            "rename": {
+              "CheckbotClient": "src/{{projectCheckbotClient}}"
+            }
+          },
+          {
+            "rename": {
+              "FeaApi": "src/{{projectFeaApi}}"
+            }
+          },
+          {
+            "condition": "includeSolution",
+            "modifiers": [
+              {
+                "rename": {
+                  "BimApiFea.sln": "{{solutionName}}.sln"
+                }
+              }
+            ]
+          }                    
+        ]
+      }
+    ],
+    "primaryOutputs": [
+      {
+        "path": "src/{{projectBimApiFeaApp}}/{{projectBimApiFeaApp}}.csproj"
+      },
+      {
+        "path": "src/{{projectBimApiFeaLink}}/{{projectBimApiFeaLink}}.csproj"
+      },
+      {
+        "path": "src/{{projectCheckbotClient}}/{{projectCheckbotClient}}.csproj"
+      },
+      {
+        "path": "src/{{projectFeaApi}}/{{projectFeaApi}}.csproj"
+      }
+    ],
     "guids": [
-      "DA28B9CA-EF31-418B-B6A4-791638C05208",
-      "C5A5C07F-569C-4EC8-9D05-A83A7918A438",
-      "5A4BDD08-64E0-4FDB-977D-34EBDE9197E0",
-      "851EA1DC-2A0A-467F-857C-E54818412DA2"     
+      "8743EA91-ECF3-47F1-96B2-ED98031C5B08",
+      "42F1711F-14C8-4122-AA4A-E1F5B7D5855A",
+      "9DFD288F-3F71-43BA-ABCC-636FD5804087",
+      "A527AC3C-2F72-49F0-B697-461827E3E8EA"     
     ]
 }
