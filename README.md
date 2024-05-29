@@ -81,3 +81,11 @@ the second command creates only csprj project (not whole application)
 ```
 dotnet new bimapifeaclient -o MyCheckbotFeaPlugin
 ```
+
+# Pack and install
+
+[See MSDN documentation](https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-template-package?pivots=dotnet-8-0)
+
+```
+dotnet pack
+```

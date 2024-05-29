@@ -75,22 +75,22 @@
           {
             "condition": "(!excludeBimApiFeaApp)",
             "rename": {
-              "BimApiFeaApp": "src/{{projectBimApiFeaApp}}"
+              "BimApiFeaApp": "{{projectBimApiFeaApp}}"
             }
           },
           {
             "rename": {
-              "BimApiFeaLink": "src/{{projectBimApiFeaLink}}"
+              "BimApiFeaLink": "{{projectBimApiFeaLink}}"
             }
           },
           {
             "rename": {
-              "CheckbotClient": "src/{{projectCheckbotClient}}"
+              "CheckbotClient": "{{projectCheckbotClient}}"
             }
           },
           {
             "rename": {
-              "FeaApi": "src/{{projectFeaApi}}"
+              "FeaApi": "{{projectFeaApi}}"
             }
           },
           {
@@ -108,22 +108,22 @@
     ],
     "primaryOutputs": [
       {
-        "path": "src/{{projectBimApiFeaApp}}/{{projectBimApiFeaApp}}.csproj"
+        "path": "{{projectBimApiFeaApp}}/{{projectBimApiFeaApp}}.csproj"
       },
       {
-        "path": "src/{{projectBimApiFeaLink}}/{{projectBimApiFeaLink}}.csproj"
+        "path": "{{projectBimApiFeaLink}}/{{projectBimApiFeaLink}}.csproj"
       },
       {
-        "path": "src/{{projectCheckbotClient}}/{{projectCheckbotClient}}.csproj"
+        "path": "{{projectCheckbotClient}}/{{projectCheckbotClient}}.csproj"
       },
       {
-        "path": "src/{{projectFeaApi}}/{{projectFeaApi}}.csproj"
+        "path": "{{projectFeaApi}}/{{projectFeaApi}}.csproj"
       }
     ],
     "guids": [
-      "8743EA91-ECF3-47F1-96B2-ED98031C5B08",
-      "42F1711F-14C8-4122-AA4A-E1F5B7D5855A",
-      "9DFD288F-3F71-43BA-ABCC-636FD5804087",
-      "A527AC3C-2F72-49F0-B697-461827E3E8EA"     
+      "27E79556-70C6-4622-875B-9FB526902DCC",
+      "60C061B7-2217-4F5D-B45B-1630AE565BBA",
+      "E92D99B0-1401-469E-903F-AFF41E1E4A20",
+      "C0950A4F-AF5D-4D8E-99AE-05F0DD4600CA"     
     ]
 }
