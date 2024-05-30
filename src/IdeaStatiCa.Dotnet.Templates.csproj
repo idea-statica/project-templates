@@ -12,7 +12,9 @@
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
-  </PropertyGroup>
+    <PackageProjectUrl>https://github.com/idea-statica/project-templates</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/idea-statica/project-templates.git</RepositoryUrl>
+    </PropertyGroup>
 
   <ItemGroup>
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**;templates\**\.vs\**" />
