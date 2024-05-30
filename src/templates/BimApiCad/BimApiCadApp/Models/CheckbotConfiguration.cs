@@ -1,4 +1,4 @@
-﻿namespace BimApiFeaApp.Models
+﻿namespace BimApiCadApp.Models
 {
 	public class CheckbotConfiguration
 	{

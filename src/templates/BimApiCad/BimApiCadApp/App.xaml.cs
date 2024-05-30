@@ -1,5 +1,5 @@
-﻿using BimApiFeaApp.Models;
-using BimApiFeaApp.ViewModels;
+﻿using BimApiCadApp.Models;
+using BimApiCadApp.ViewModels;
 using CommunityToolkit.Mvvm.ComponentModel;
 using IdeaStatiCa.Plugin;
 using IdeaStatiCa.PluginLogger;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Windows;
 
-namespace BimApiFeaApp
+namespace BimApiCadApp
 {
 	/// <summary>
 	/// Interaction logic for App.xaml
@@ -43,7 +43,7 @@ namespace BimApiFeaApp
 			{
 				// initialize logger the main application logger
 				SerilogFacade.Initialize();
-				return LoggerProvider.GetLogger("BimApiFeaApp");
+				return LoggerProvider.GetLogger("BimApiCadApp");
 			});
 
 			services.AddTransient<MainWindow>(serviceProvider => new MainWindow
