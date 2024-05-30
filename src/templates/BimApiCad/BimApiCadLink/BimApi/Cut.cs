@@ -4,7 +4,7 @@ using IdeaStatiCa.BimApiLink.Identifiers;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class Cut : IdeaCut
+	public class Cut : IdeaCut
 	{
 		public override IIdeaObject ModifiedObject => GetModifiedObject();
 

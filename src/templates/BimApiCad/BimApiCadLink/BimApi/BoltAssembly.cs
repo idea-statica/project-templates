@@ -5,7 +5,7 @@ using IdeaStatiCa.BimApi;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class BoltAssembly : IdeaBoltAssembly
+	public class BoltAssembly : IdeaBoltAssembly
 	{
 		public BoltAssembly(Identifier<IIdeaBoltAssembly> identifier) : base(identifier)
 		{ }

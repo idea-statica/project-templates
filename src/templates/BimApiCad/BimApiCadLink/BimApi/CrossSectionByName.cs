@@ -3,7 +3,7 @@ using IdeaStatiCa.BimApi;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class CrossSectionByName : IdeaCrossSectionByName
+	public class CrossSectionByName : IdeaCrossSectionByName
 	{
 		public override IIdeaMaterial Material => Get<IIdeaMaterial>(MaterialNo);
 

@@ -5,7 +5,7 @@ using IdeaStatiCa.BimApi;
 
 namespace BimApiCadLink.Importers
 {
-	internal class PlateImporter : BaseImporter<IIdeaPlate>
+	public class PlateImporter : BaseImporter<IIdeaPlate>
 	{
 		public PlateImporter(ICadGeometryApi model): base(model)
 		{

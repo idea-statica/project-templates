@@ -5,7 +5,7 @@ using IdeaStatiCa.BimApiLink.Importers;
 
 namespace BimApiCadLink.Importers
 {
-	internal class CrossSectionImporter : StringIdentifierImporter<IIdeaCrossSection>
+	public class CrossSectionImporter : StringIdentifierImporter<IIdeaCrossSection>
 	{
 		protected ICadGeometryApi Model { get; }
 

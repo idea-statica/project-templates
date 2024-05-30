@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class BoltGrid : IdeaBoltGrid
+	public class BoltGrid : IdeaBoltGrid
 	{
 		public BoltGrid(Identifier<IIdeaBoltGrid> identifier) : base(identifier)
 		{ }

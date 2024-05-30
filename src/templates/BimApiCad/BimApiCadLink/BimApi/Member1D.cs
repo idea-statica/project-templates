@@ -3,7 +3,7 @@ using IdeaStatiCa.BimApi;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class Member1D : IdeaMember1D
+	public class Member1D : IdeaMember1D
 	{
 		public string CrossSectionNo { get; set; }
 

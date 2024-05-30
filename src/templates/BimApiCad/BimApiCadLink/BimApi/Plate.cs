@@ -4,7 +4,7 @@ using IdeaStatiCa.BimApi;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class Plate : IdeaPlate
+	public class Plate : IdeaPlate
 	{
 		public override string Name { get; set; }
 

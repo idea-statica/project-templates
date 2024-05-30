@@ -3,7 +3,7 @@ using IdeaStatiCa.BimApi;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class Segment3D : IdeaLineSegment3D
+	public class Segment3D : IdeaLineSegment3D
 	{
 		public override IIdeaNode StartNode => Get<IIdeaNode>(StartNodeNo);
 

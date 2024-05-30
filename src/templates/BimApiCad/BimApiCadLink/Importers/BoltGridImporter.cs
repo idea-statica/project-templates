@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace BimApiCadLink.Importers
 {
-	internal class BoltGridImporter : BaseImporter<IIdeaBoltGrid>
+	public class BoltGridImporter : BaseImporter<IIdeaBoltGrid>
 	{
 		public BoltGridImporter(ICadGeometryApi model) : base(model)
 		{

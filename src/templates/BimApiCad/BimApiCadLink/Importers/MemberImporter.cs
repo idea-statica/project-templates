@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace BimApiCadLink.Importers
 {
-	internal class MemberImporter : BaseImporter<IIdeaMember1D>
+	public class MemberImporter : BaseImporter<IIdeaMember1D>
 	{
 		public MemberImporter(ICadGeometryApi model) : base(model)
 		{

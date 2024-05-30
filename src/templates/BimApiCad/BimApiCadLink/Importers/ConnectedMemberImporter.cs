@@ -6,7 +6,7 @@ using IdeaStatiCa.BimApiLink.Importers;
 
 namespace BimApiCadLink.Importers
 {
-	internal class ConnectedMemberImporter : ImporterConnectedMemberIdentifier<IIdeaConnectedMember>
+	public class ConnectedMemberImporter : ImporterConnectedMemberIdentifier<IIdeaConnectedMember>
 	{
 		protected ICadGeometryApi Model { get; }
 

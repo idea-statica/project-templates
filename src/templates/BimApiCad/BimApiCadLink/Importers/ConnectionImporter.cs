@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace BimApiCadLink.Importers
 {
-	internal class ConnectionImporter : ImporterConnectionIdentifier<IIdeaConnectionPoint>
+	public class ConnectionImporter : ImporterConnectionIdentifier<IIdeaConnectionPoint>
 	{
 		protected ICadGeometryApi Model { get; }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BimApiCadLink.Hooks
 {
-	internal class PluginHook
+	public class PluginHook
 	{
 	}
 }

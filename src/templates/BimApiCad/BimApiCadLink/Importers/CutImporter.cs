@@ -4,7 +4,7 @@ using IdeaStatiCa.BimApi;
 
 namespace BimApiCadLink.BimApi
 {
-	internal class CutImporter : BaseImporter<IIdeaCut>
+	public class CutImporter : BaseImporter<IIdeaCut>
 	{
 		public CutImporter(ICadGeometryApi model)
 			: base(model)

@@ -5,7 +5,7 @@ using IdeaStatiCa.BimApiLink.Importers;
 
 namespace BimApiCadLink.Importers
 {
-	internal class NodeImporter : StringIdentifierImporter<IIdeaNode>
+	public class NodeImporter : StringIdentifierImporter<IIdeaNode>
 	{
 		protected ICadGeometryApi Model { get; }
 

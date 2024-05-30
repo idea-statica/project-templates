@@ -14,8 +14,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BimApiFeaLink\BimApiFeaLink.csproj" />
-		<ProjectReference Include="..\FeaApi\FeaApi.csproj" />
+	  <ProjectReference Include="..\BimApiCadLink\BimApiCadLink.csproj" />
+	  <ProjectReference Include="..\CadApi\CadApi.csproj" />
 	</ItemGroup>
 
 </Project>

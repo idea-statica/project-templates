@@ -4,7 +4,7 @@ using IdeaStatiCa.BimApiLink.BimApi;
 
 namespace BimApiCadLink.Importers
 {
-	internal class MaterialImporter : BaseImporter<IIdeaMaterial>
+	public class MaterialImporter : BaseImporter<IIdeaMaterial>
 	{
 		public MaterialImporter(ICadGeometryApi model)
 			: base(model)
