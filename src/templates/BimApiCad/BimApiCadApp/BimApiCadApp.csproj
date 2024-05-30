@@ -3,8 +3,8 @@
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net6.0-windows</TargetFramework>
-		<RootNamespace>BimApiFeaApp</RootNamespace>
-    	<AssemblyName>BimApiFeaApp</AssemblyName>  
+		<RootNamespace>BimApiCadApp</RootNamespace>
+    	<AssemblyName>BimApiCadApp</AssemblyName>  
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
