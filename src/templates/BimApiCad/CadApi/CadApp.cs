@@ -11,7 +11,7 @@
 		string GetProjectDir();
 	}
 
-	public class CadApi : ICadApi
+	public class CadApp : ICadApi
 	{
 		public ICadGeometryApi Geometry { get; } = new CadGeometryApi();
 
