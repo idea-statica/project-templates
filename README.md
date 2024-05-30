@@ -23,8 +23,9 @@ dotnet new list
 You should get a list of all templates which are installed on a PC. The should be also
 
 ```
-IDEA StatiCa Checkbot Client FEA App          bimapifeaapp                [C#]        ideastatica/checkbot
-IDEA StatiCa RCS Rest API client console App  rcsclientconsole            [C#]        ideastatica/rcs/api
+IDEA StatiCa Checkbot Client CAD App          bimapicadapp      [C#]      ideastatica/checkbot/cad
+IDEA StatiCa Checkbot Client FEA App          bimapifeaapp      [C#]      ideastatica/checkbot/fea
+IDEA StatiCa RCS Rest API client console App  rcsclientconsole  [C#]      ideastatica/rcs/api
 ```
 
 commands  
