@@ -37,7 +37,7 @@ namespace BimApiFeaApp.ViewModels
 				throw new Exception("BimApiFeaApp.MainWindowViewModel : Logger can not be null");
 			}
 
-			ProjectDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CheckBotRunner"); ;
+			ProjectDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "FeaProjectExample"); ;
 
 			Logger = logger;
 			if (Directory.Exists(configuration.IdeaStatiCaDir))
