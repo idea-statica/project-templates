@@ -2,7 +2,7 @@
 using MathNet.Numerics.LinearAlgebra.Double;
 using System.Collections.Generic;
 
-namespace BimApiCadClient.CadApi
+namespace CadApi
 {
 	public class CadPoint3D
 	{

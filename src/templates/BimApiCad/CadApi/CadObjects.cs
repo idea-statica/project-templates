@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BimApiCadClient.CadApi
+namespace CadApi
 {
 
 	//Cad Object Can be Extended as Required for your 

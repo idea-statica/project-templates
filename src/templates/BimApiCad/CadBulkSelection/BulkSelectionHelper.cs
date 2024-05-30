@@ -1,10 +1,11 @@
-﻿using BimApiCadClient.CadApi;
+﻿using CadApi;
 using CI.Geometry3D;
 using IdeaStatiCa.BIM.Common;
+using System;
 using System.Collections.Generic;
 using WM = System.Windows.Media.Media3D;
 
-namespace BimApiCadClient.BulkSelection
+namespace CadBulkSelection
 {
 	public static class BulkSelectionHelper
 	{

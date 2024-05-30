@@ -1,4 +1,4 @@
-﻿namespace BimApiCadClient.CadApi
+﻿namespace CadApi
 {
 	public interface ICadApi
 	{
