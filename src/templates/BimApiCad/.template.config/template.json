@@ -16,8 +16,8 @@
         "type": "parameter",
         "datatype": "string",
         "defaultValue": "BimApiCadApp",
-        "replaces": "BimApiCedApp",
-        "description": "WPF application which simulates a FEA application",
+        "replaces": "BimApiCadApp",
+        "description": "WPF application which simulates a CAD application",
         "fileRename": "BimApiCadApp"
       },
       "projectBimApiCadLink": {
@@ -25,7 +25,7 @@
         "datatype": "string",
         "defaultValue": "BimApiCadLink",
         "replaces": "BimApiCadLink",
-        "description": "Implementation of BIM API for converting objects in a FEA Model to BIM API objects",
+        "description": "Implementation of BIM API for converting objects in a CAD Model to BIM API objects",
         "fileRename": "BimApiCadLink"
       },
       "projectCheckbotClient": {
