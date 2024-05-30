@@ -1,4 +1,4 @@
-﻿using BimApiClientApp.Models;
+﻿using BimApiFeaApp.Models;
 using CheckbotClient;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -8,7 +8,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace BimApiClientApp.ViewModels
+namespace BimApiFeaApp.ViewModels
 {
 	/// <summary>
 	/// TODO - add a description of this view model
@@ -34,7 +34,7 @@ namespace BimApiClientApp.ViewModels
 			if(logger == null)
 			{
 				// logger is required
-				throw new Exception("BimApiClientApp.MainWindowViewModel : Logger can not be null");
+				throw new Exception("BimApiFeaApp.MainWindowViewModel : Logger can not be null");
 			}
 
 			ProjectDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "CheckBotRunner"); ;
@@ -45,13 +45,13 @@ namespace BimApiClientApp.ViewModels
 				// Checkbot exists
 				IdeaStatiCaSetup = configuration.IdeaStatiCaDir;
 				StatusMessage = "Ok";
-				Logger.LogInformation($"BimApiClientApp.MainWindowViewModel is starting. Checkbot is found '{IdeaStatiCaSetup}'");
+				Logger.LogInformation($"BimApiFeaApp.MainWindowViewModel is starting. Checkbot is found '{IdeaStatiCaSetup}'");
 			}
 			else
 			{
 				// checkbot doesn;t exist
 				IdeaStatiCaSetup = string.Empty;
-				Logger.LogInformation($"BimApiClientApp.BimApiClientApp failed. Checkbot is not found '{IdeaStatiCaSetup}'");
+				Logger.LogInformation($"BimApiFeaApp.BimApiFeaApp failed. Checkbot is not found '{IdeaStatiCaSetup}'");
 				StatusMessage = $"IDEA StatiCa is not in available at'{configuration?.IdeaStatiCaDir}'";
 			}
 
