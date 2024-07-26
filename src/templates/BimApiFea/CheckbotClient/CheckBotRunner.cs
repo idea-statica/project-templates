@@ -42,6 +42,7 @@ namespace CheckbotClient
 				await FeaBimLink.Create("My application name", workingDirectory)
 					.WithIdeaStatiCa(checkbotLocation)
 					.WithImporters(x => x.RegisterContainer(new AutofacServiceProvider(container)))
+					.WithResultsImporters(x => x.RegisterImporter(container.Resolve<ResultsImporter>()))
 					.WithLogger(logger)
 					.WithBimHostingFactory(bimHostingFactory)
 					.Run(model);
