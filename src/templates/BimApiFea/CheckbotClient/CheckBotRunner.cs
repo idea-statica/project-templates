@@ -59,6 +59,8 @@ namespace CheckbotClient
 
 			// Register FEA application API (geometry, loads, results, ...)
 			builder.Register(x => feaApi.Geometry);
+			builder.Register(x => feaApi.Loads);
+			builder.Register(x => feaApi.Results);
 
 			// Register messaging service (progress, ...)
 			builder.RegisterInstance(messagingService);
@@ -68,6 +70,11 @@ namespace CheckbotClient
 			builder.RegisterType<MaterialImporter>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<MemberImporter>().AsImplementedInterfaces().SingleInstance();
 			builder.RegisterType<NodeImporter>().AsImplementedInterfaces().SingleInstance();
+
+			builder.RegisterType<LoadCaseImporter>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<LoadGroupImporter>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<LoadCombinationImporter>().AsImplementedInterfaces().SingleInstance();
+			builder.RegisterType<ResultsImporter>().SingleInstance();
 
 			builder.RegisterType<Model>().SingleInstance();
 			return builder.Build();
