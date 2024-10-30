@@ -11,3 +11,9 @@ install the project templates from the local dir
 ```
 dotnet new install ./nuget/IdeaStatiCa.Dotnet.Templates.*.nupkg
 ```
+
+Uninstalling the templates 
+
+```
+dotnet new uninstall IdeaStatiCa.Dotnet.Templates
+```
