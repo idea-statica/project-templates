@@ -59,21 +59,23 @@ namespace CheckbotClient
 				.Cast<Identifier<IIdeaMember1D>>()
 				.ToList();
 
-			List<Identifier<IIdeaCombiInput>> loadCombinations = loads.GetLoadCombinationsIds()
-				.Select(x => new IntIdentifier<IIdeaCombiInput>(x))
-				.Cast<Identifier<IIdeaCombiInput>>()
-				.ToList();
-
 			return new FeaUserSelection()
 			{
 				Members = members,
-				Nodes = nodes,
-				Combinations = loadCombinations
+				Nodes = nodes
 			};
 		}
 
+		public IEnumerable<Identifier<IIdeaCombiInput>> GetAllCombinations()
+		{
+			return loads.GetLoadCombinationsIds()
+				.Select(x => new IntIdentifier<IIdeaCombiInput>(x))
+				.Cast<Identifier<IIdeaCombiInput>>()
+				.ToList();
+		}
+
 		/// <inheritdoc cref="SelectUserSelection"/>
-		public void SelectUserSelection(IEnumerable<Identifier<IIdeaNode>> nodes, IEnumerable<Identifier<IIdeaMember1D>> members) 
+		public void SelectUserSelection(IEnumerable<Identifier<IIdeaNode>> nodes, IEnumerable<Identifier<IIdeaMember1D>> members)
 		{
 			//feaApi.SelectNodes(nodes, members);
 		}
