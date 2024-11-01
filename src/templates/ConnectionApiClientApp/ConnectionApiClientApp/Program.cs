@@ -1,6 +1,10 @@
 ﻿using IdeaStatiCa.PluginLogger;
 using Newtonsoft.Json;
+using System;
+using System.IO;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ConnectionApiClientApp
 {
@@ -9,7 +13,7 @@ namespace ConnectionApiClientApp
 		static async Task Main(string[] args)
 		{
 			// initialize logger
-			string assemblyName = Assembly.GetExecutingAssembly().GetName().Name!;
+			string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
 			var logfileName = Path.ChangeExtension(assemblyName, ".log");
 			SerilogFacade.Initialize(logfileName);
 
@@ -18,7 +22,7 @@ namespace ConnectionApiClientApp
 				try
 				{
 					// Get the directory of the executing assembly
-					string assemblyDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
+					string assemblyDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
 					// Example usage of the directory
 					string ideaConFile = Path.Combine(assemblyDirectory, "Projects", "test1.ideaCon");

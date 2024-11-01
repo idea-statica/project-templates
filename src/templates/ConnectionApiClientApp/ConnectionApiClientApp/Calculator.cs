@@ -1,6 +1,11 @@
 ﻿using IdeaStatiCa.ConnectionApi;
 using IdeaStatiCa.ConnectionApi.Model;
 using IdeaStatiCa.Plugin;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace ConnectionApiClientApp
 {
