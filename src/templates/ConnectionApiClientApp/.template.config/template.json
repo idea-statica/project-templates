@@ -1,0 +1,35 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "IDEA StatiCa",
+    "classifications": ["ideastatica", "connection", "api"],
+    "identity": "ideastatica.conapiclient.01",
+    "name": "IDEA StatiCa Connection Rest API Client Console",
+    "shortName": "conapiconsole",
+    "tags": {
+        "type": "solution",
+        "language": "C#"
+    },
+    "sourceName": "ConnectionApiClientApp",
+    "symbols": {
+      "Framework": {
+        "type": "parameter",
+        "description": "The target framework for the project.",
+        "datatype": "choice",
+        "choices": [
+          {
+            "choice": "net8.0",
+            "description": "Target net8.0"
+          },
+          {
+            "choice": "net48",
+            "description": "Target net48"
+          }          
+        ],
+        "replaces": "net8.0",
+        "defaultValue": "net8.0"
+      }
+    },
+    "guids": [
+      "F7C28A5A-1A1A-4E69-9DCB-D7D4C906721F"
+    ]
+}
