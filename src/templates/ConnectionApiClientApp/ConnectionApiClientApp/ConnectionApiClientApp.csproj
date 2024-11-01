@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>warnings</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IdeaStatiCa.Api" Version="*" />
+		<PackageReference Include="IdeaStatiCa.ConnectionApi" Version="*" />
+		<PackageReference Include="IdeaStatiCa.OpenModel" Version="*" />
+		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Projects\test1.ideaCon">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
