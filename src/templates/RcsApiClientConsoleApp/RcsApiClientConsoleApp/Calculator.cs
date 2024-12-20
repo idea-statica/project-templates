@@ -1,23 +1,23 @@
 ﻿using IdeaStatiCa.Api.Common;
-using IdeaStatiCa.Api.Connection.Model;
-using IdeaStatiCa.ConnectionApi;
+using IdeaStatiCa.Api.RCS.Model;
 using IdeaStatiCa.Plugin;
+using IdeaStatiCa.RcsApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConnectionApiClientApp
+namespace RcsApiClientConsoleApp
 {
 	public class Calculator : IDisposable
 	{
 		private bool disposedValue;
-		private readonly IApiServiceFactory<IConnectionApiClient> _clientFactory;
+		private readonly IApiServiceFactory<IRcsApiClient> _clientFactory;
 		private readonly IPluginLogger _logger;
 
 
-		public Calculator(IPluginLogger logger, IApiServiceFactory<IConnectionApiClient> clientFactory)
+		public Calculator(IPluginLogger logger, IApiServiceFactory<IRcsApiClient> clientFactory)
 		{
 			_clientFactory = clientFactory;
 			_logger = logger;
@@ -26,36 +26,34 @@ namespace ConnectionApiClientApp
 		/// <summary>
 		/// Calculate the ideaCon project and return the result
 		/// </summary>
-		/// <param name="ideaConFile">The path to the a ideacon project to calculte</param>
+		/// <param name="rcsFile">The path to the the rcs project to calculte</param>
 		/// <param name="cancellationToken">Cancellation token</param>
 		/// <returns>Results</returns>
-		public async Task<List<ConResultSummary>> CalculateAsync(string ideaConFile, CancellationToken cancellationToken)
+		public async Task<List<RcsSectionResultOverview>> CalculateAsync(string rcsFile, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Creating CreateConnectionApiClient");
 
 			// create ConnectionApiClient
-			using (var conClient = await _clientFactory.CreateApiClient())
+			using (var rcsClient = await _clientFactory.CreateApiClient())
 			{
 				// open the project and get its id
-				var projData = await conClient.Project.OpenProjectAsync(ideaConFile, cancellationToken);
+				var projData = await rcsClient.Project.OpenProjectAsync(rcsFile, cancellationToken);
 
-				if(!projData.Connections.Any())
+				if(!projData.Sections.Any())
 				{
-					_logger.LogInformation($"'ideaConFile' does not contain any connections.");
+					_logger.LogInformation($"'{rcsFile}' does not contain any sections.");
 					return null;
 				}
 
-				// request to run plastic CBFEM for all connections in the project
-				ConCalculationParameter conCalcParam = new ConCalculationParameter()
+				RcsCalculationParameters rcsCalcParam = new RcsCalculationParameters()
 				{
-					AnalysisType = ConAnalysisTypeEnum.Stress_Strain,
-					ConnectionIds = projData.Connections.Select(c => c.Id).ToList()
+					Sections = projData.Sections.Select(s => s.Id).ToList()
 				};
 
 				_logger.LogInformation("Starting calculation");
-				var cbfemResult = await conClient.Calculation.CalculateAsync(projData.ProjectId, conCalcParam, 0, cancellationToken);
+				var rcsSectResults = await rcsClient.Calculation.CalculateAsync(projData.ProjectId, rcsCalcParam, 0, cancellationToken);
 				_logger.LogInformation("Calculation finished");
-				return cbfemResult;
+				return rcsSectResults;
 			}
 		}
 
@@ -73,7 +71,6 @@ namespace ConnectionApiClientApp
 				disposedValue = true;
 			}
 		}
-
 
 		public void Dispose()
 		{

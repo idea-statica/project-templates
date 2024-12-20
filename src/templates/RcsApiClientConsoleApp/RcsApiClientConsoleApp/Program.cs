@@ -1,41 +1,31 @@
-﻿using IdeaStatiCa.Plugin.Api.RCS;
-using IdeaStatiCa.Plugin.Api.RCS.Model;
+﻿using IdeaStatiCa.Api.Common;
 using IdeaStatiCa.PluginLogger;
-using IdeaStatiCa.PluginsTools.Windows.Utilities;
-using IdeaStatiCa.RcsClient.Factory;
+using IdeaStatiCa.RcsApi;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace RcsApiClientConsoleApp
 {
-	public class Program
+	internal class Program
 	{
-		private static IdeaStatiCa.Plugin.IPluginLogger Logger { get; set; }
-		static readonly string IdeaStaticaVersion = "23.1";
-
-		public static async Task Main(string[] args)
+		static async Task Main(string[] args)
 		{
-			// initialize logger 
-			SerilogFacade.Initialize();
-			Logger = LoggerProvider.GetLogger("RcsApiClientConsoleApp");
-			try
+			// initialize logger
+			string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+			var logfileName = Path.ChangeExtension(assemblyName, ".log");
+			SerilogFacade.Initialize(logfileName);
+
+			var logger = LoggerProvider.GetLogger(assemblyName);
 			{
-				string installationPath = IdeaStatiCaSetupTools.GetIdeaStatiCaInstallDir(IdeaStaticaVersion);
-
-				Console.WriteLine($"Idea Statica found '{installationPath}'");
-
-				Logger.LogInformation($"RcsApiClientConsoleApp is starting '{installationPath}'");
-				var rcsClientFactory = new RcsClientFactory(installationPath, Logger);
-
-
-				//Create the client from the Factory
-				using (IRcsApiController client = await rcsClientFactory.CreateRcsApiClient())
+				try
 				{
+					// Get the directory of the executing assembly
+					string assemblyDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
 					//Getting the directory path to the sample file in example project.
 					string samplePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
@@ -43,31 +33,43 @@ namespace RcsApiClientConsoleApp
 					//filepath to existing .ideaRcs project
 					string rcsFilePath = Path.Combine(samplePath, "Projects\\Project1.IdeaRcs");
 
-					Console.WriteLine($"Openinbg '{rcsFilePath}'");
-					//Opens project on the server side to start performing operations
-					bool okay = await client.OpenProjectAsync(rcsFilePath, CancellationToken.None);
+					IApiServiceFactory<IRcsApiClient> clientFactory = null;
 
-					// calculate the project
-					Console.WriteLine("Starting calculation");
-					List<RcsSectionResultOverview> briefResults = await client.CalculateAsync(new RcsCalculationParameters(), CancellationToken.None);
+					try
+					{
+						// to attach the client to a running instance of IdeaStatiCa.ConnectionRestApi which is listening on http://localhost:5000
+						// clientFactory = new ConnectionApiServiceAttacher("http://localhost:5000");
 
-					JToken parsedJson = JToken.Parse(JsonConvert.SerializeObject(briefResults));
-					string output = parsedJson.ToString(Newtonsoft.Json.Formatting.Indented);
+						// to run the private service IdeaStatiCa.ConnectionRestApi
+						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 24.1"; // path to the IdeaStatiCa.ConnectionRestApi.exe
+						Debug.Assert(File.Exists(Path.Combine(ideaStatiCaPath, "IdeaStatiCa.RcsRestApi.exe")), $"IdeaStatiCa.RcsRestApi.exe was not found in '{ideaStatiCaPath}'");
 
-					//Print brief results to the Console
-					Console.WriteLine(output);
+						clientFactory = new RcsApiServiceRunner(ideaStatiCaPath);
+
+						using (var calculator = new Calculator(logger, clientFactory))
+						{
+							logger.LogInformation("Starting CBFEM calculation");
+							var res = await calculator.CalculateAsync(rcsFilePath, CancellationToken.None);
+							logger.LogInformation($"CBFEM calculation finished ");
+
+							// Convert the result to a JSON string
+							string jsonString = JsonConvert.SerializeObject(res, Formatting.Indented);
+							Console.WriteLine(jsonString);
+						}
+					}
+					finally
+					{
+						if(clientFactory is IDisposable disp)
+						{
+							disp.Dispose();
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					logger.LogWarning("An error occurred", ex);
 				}
 			}
-			catch (Exception ex)
-			{
-				Logger.LogError("App failed", ex);
-				Console.WriteLine(ex.Message);
-			}
-
-			// end console application
-			Console.WriteLine("Done. Press any key to exit.");
-			Console.ReadKey();
-
 		}
 	}
 }
