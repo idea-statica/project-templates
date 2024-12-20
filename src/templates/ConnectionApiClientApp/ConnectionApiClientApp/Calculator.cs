@@ -1,27 +1,26 @@
-﻿using IdeaStatiCa.ConnectionApi;
-using IdeaStatiCa.ConnectionApi.Model;
+﻿using IdeaStatiCa.Api.Common;
+using IdeaStatiCa.Api.Connection.Model;
+using IdeaStatiCa.ConnectionApi;
 using IdeaStatiCa.Plugin;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace ConnectionApiClientApp
 {
 	public class Calculator : IDisposable
 	{
 		private bool disposedValue;
-		private readonly ConnectionApiClientFactory _clientFactory;
+		private readonly IApiServiceFactory<IConnectionApiClient> _clientFactory;
 		private readonly IPluginLogger _logger;
 
 
-		public Calculator(IPluginLogger logger)
+		public Calculator(IPluginLogger logger, IApiServiceFactory<IConnectionApiClient> clientFactory)
 		{
+			_clientFactory = clientFactory;
 			_logger = logger;
-
-			// attaach to the existing service
-			_clientFactory = new ConnectionApiClientFactory("http://localhost:5000");
 		}
 
 		/// <summary>
@@ -33,8 +32,9 @@ namespace ConnectionApiClientApp
 		public async Task<List<ConResultSummary>> CalculateAsync(string ideaConFile, CancellationToken cancellationToken)
 		{
 			_logger.LogInformation("Creating CreateConnectionApiClient");
+
 			// create ConnectionApiClient
-			using (var conClient = await _clientFactory.CreateConnectionApiClient())
+			using (var conClient = await _clientFactory.CreateApiClient())
 			{
 				// open the project and get its id
 				var projData = await conClient.Project.OpenProjectAsync(ideaConFile, cancellationToken);
@@ -48,7 +48,7 @@ namespace ConnectionApiClientApp
 				// request to run plastic CBFEM for all connections in the project
 				ConCalculationParameter conCalcParam = new ConCalculationParameter()
 				{
-					AnalysisType = ConAnalysisTypeEnum.StressStrain,
+					AnalysisType = ConAnalysisTypeEnum.Stress_Strain,
 					ConnectionIds = projData.Connections.Select(c => c.Id).ToList()
 				};
 
