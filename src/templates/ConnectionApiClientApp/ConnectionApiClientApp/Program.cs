@@ -3,6 +3,7 @@ using IdeaStatiCa.ConnectionApi;
 using IdeaStatiCa.PluginLogger;
 using Newtonsoft.Json;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Threading;
@@ -33,12 +34,14 @@ namespace ConnectionApiClientApp
 
 					try
 					{
-
-						// attach the client to a running instance of IdeaStatiCa.ConnectionRestApi which is listening on http://localhost:5000
+						// to attach the client to a running instance of IdeaStatiCa.ConnectionRestApi which is listening on http://localhost:5000
 						// clientFactory = new ConnectionApiServiceAttacher("http://localhost:5000");
 
-						// run tha private service IdeaStatiCa.ConnectionRestApi
-						clientFactory = new ConnectionApiServiceRunner("C:\\Program Files\\IDEA StatiCa\\StatiCa 24.1");
+						// to run the private service IdeaStatiCa.ConnectionRestApi
+						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 24.1"; // path to the IdeaStatiCa.ConnectionRestApi.exe
+						Debug.Assert(File.Exists(Path.Combine(ideaStatiCaPath, "IdeaStatiCa.ConnectionRestApi.exe")), $"IdeaStatiCa.ConnectionRestApi.exe was not found in '{ideaStatiCaPath}'");
+
+						clientFactory = new ConnectionApiServiceRunner(ideaStatiCaPath);
 
 						using (var calculator = new Calculator(logger, clientFactory))
 						{
