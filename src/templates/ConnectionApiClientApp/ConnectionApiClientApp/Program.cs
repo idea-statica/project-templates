@@ -38,7 +38,7 @@ namespace ConnectionApiClientApp
 						// clientFactory = new ConnectionApiServiceAttacher("http://localhost:5000");
 
 						// to run the private service IdeaStatiCa.ConnectionRestApi
-						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 24.1"; // path to the IdeaStatiCa.ConnectionRestApi.exe
+						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 25.1"; // path to the IdeaStatiCa.ConnectionRestApi.exe
 						Debug.Assert(File.Exists(Path.Combine(ideaStatiCaPath, "IdeaStatiCa.ConnectionRestApi.exe")), $"IdeaStatiCa.ConnectionRestApi.exe was not found in '{ideaStatiCaPath}'");
 
 						clientFactory = new ConnectionApiServiceRunner(ideaStatiCaPath);
