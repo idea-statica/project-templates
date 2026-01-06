@@ -53,7 +53,7 @@ namespace ConnectionApiClientApp
 				};
 
 				_logger.LogInformation("Starting calculation");
-				var cbfemResult = await conClient.Calculation.CalculateAsync(projData.ProjectId, conCalcParam, 0, cancellationToken);
+				var cbfemResult = await conClient.Calculation.CalculateAsync(projData.ProjectId, conCalcParam.ConnectionIds, 0, cancellationToken);
 				_logger.LogInformation("Calculation finished");
 				return cbfemResult;
 			}
