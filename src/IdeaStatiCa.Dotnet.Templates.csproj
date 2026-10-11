@@ -1,7 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <Version>1.0</Version>
+    <!-- Major.Minor must match the IdeaStatiCa.* package versions referenced by the templates (e.g. 26.0.*) -->
+    <MajorMinorVersion>26.0</MajorMinorVersion>
+    <!-- Patch number is supplied by CI (-p:BuildNumber=<run number>) -->
+    <BuildNumber Condition="'$(BuildNumber)' == ''">0</BuildNumber>
+    <Version>$(MajorMinorVersion).$(BuildNumber)</Version>
     <PackageId>IdeaStatiCa.Dotnet.Templates</PackageId>
     <Title>IDEA StatiCa Templates</Title>
     <Authors>IDEA StatiCa</Authors>
