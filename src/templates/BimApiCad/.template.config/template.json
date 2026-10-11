@@ -58,16 +58,20 @@
         "datatype": "choice",
         "choices": [
           {
+            "choice": "net10.0-windows10.0.22621.0",
+            "description": "Target net10.0-windows10.0.22621.0 (IDEA StatiCa 26.0+)"
+          },
+          {
             "choice": "net8.0-windows",
             "description": "Target net8.0-windows"
           },
           {
             "choice": "net48",
             "description": "Target net48"
-          }          
+          }
         ],
-        "replaces": "net8.0-windows",
-        "defaultValue": "net8.0-windows"
+        "replaces": "net10.0-windows10.0.22621.0",
+        "defaultValue": "net10.0-windows10.0.22621.0"
       }     
     },
     "sources": [
