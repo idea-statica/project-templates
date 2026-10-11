@@ -1,6 +1,21 @@
 # IDEA StatiCa project templates
 
-Templates for creating projects for Idea StatiCa BIM link plugins
+Templates for creating projects for Idea StatiCa BIM link plugins and REST API clients.
+
+The templates reference IDEA StatiCa NuGet packages `26.0.*`, so the generated projects are compatible with IDEA StatiCa setup **26.0**.
+If you use a different IDEA StatiCa version, update the `IdeaStatiCa.*` package versions in the generated `.csproj` files to match it.
+
+Supported target frameworks (selected by the `-F` / `--Framework` option or in the Visual Studio *New project* dialog):
+
+| Template | Short name | Frameworks (default first) |
+|---|---|---|
+| IDEA StatiCa Checkbot Client CAD App | `bimapicadapp` | `net10.0-windows10.0.22621.0`, `net8.0-windows`, `net48` |
+| IDEA StatiCa Checkbot Client FEA App | `bimapifeaapp` | `net10.0-windows`, `net8.0-windows`, `net48` |
+| IDEA StatiCa Connection Rest API Client Console | `conapiconsole` | `net10.0`, `net8.0`, `net48` |
+| IDEA StatiCa RCS Rest API client console App | `rcsclientconsole` | `net10.0`, `net8.0`, `net48` |
+
+> The CAD template targets `net10.0-windows10.0.22621.0` for .NET 10 because `IdeaStatiCa.ItemsSorter` 26.0 is published for this Windows platform version.
+> `IdeaStatiCa.ItemsSorter` 26.0 has no .NET 8 build, so with `net8.0-windows` the CAD template falls back to its .NET Framework assembly (warning NU1701).
 
 Installation
 
@@ -25,6 +40,7 @@ You should get a list of all templates which are installed on a PC. The should b
 ```
 IDEA StatiCa Checkbot Client CAD App          bimapicadapp      [C#]      ideastatica/checkbot/cad
 IDEA StatiCa Checkbot Client FEA App          bimapifeaapp      [C#]      ideastatica/checkbot/fea
+IDEA StatiCa Connection Rest API Client ...   conapiconsole     [C#]      ideastatica/connection/api
 IDEA StatiCa RCS Rest API client console App  rcsclientconsole  [C#]      ideastatica/rcs/api
 ```
 
@@ -68,11 +84,12 @@ Template options:
   -p:pr, --projectFeaApi <projectFeaApi>                 Mock of a FEA API
                                                          Type: string
                                                          Default: FeaApi
-  -F, --Framework <net48|net6.0-windows>                 The target framework for the project.
-                                                         Type: choice
-                                                           net6.0-windows  Target net6.0-windows
-                                                           net48           Target net48
-                                                         Default: net6.0-windows
+  -F, --Framework <net10.0-windows|net48|net8.0-windows>  The target framework for the project.
+                                                          Type: choice
+                                                            net10.0-windows  Target net10.0-windows
+                                                            net8.0-windows   Target net8.0-windows
+                                                            net48            Target net48
+                                                          Default: net10.0-windows
 ```
 
 To create a new WPF application *MyCheckbotFeaPluginApp* which runs Idea StatiCa Checkbot and implements basic BIM Api importers in current directory run 
@@ -81,7 +98,7 @@ To create a new WPF application *MyCheckbotFeaPluginApp* which runs Idea StatiCa
 dotnet new bimapifeaapp -F net48 -o MyCheckbotFeaPluginApp
 ```
 
- (supported frameworks are net48 or net6.0-windows)
+ (supported frameworks are net10.0-windows, net8.0-windows or net48)
 
  it is possible to run it from Microsoft Visual Studio. See
 

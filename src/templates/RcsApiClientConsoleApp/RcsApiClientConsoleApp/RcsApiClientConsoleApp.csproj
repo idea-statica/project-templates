@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -10,8 +10,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="*" />
-		<PackageReference Include="IdeaStatiCa.RcsApi" Version="*" />
+		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="26.0.*" />
+		<PackageReference Include="IdeaStatiCa.RcsApi" Version="26.0.*" />
 	</ItemGroup>
 
 	<ItemGroup>

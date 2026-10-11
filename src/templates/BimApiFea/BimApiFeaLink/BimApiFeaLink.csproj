@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <RootNamespace>BimApiFeaLink</RootNamespace>
     <AssemblyName>BimApiFeaLink</AssemblyName>    
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdeaStatica.BimApi" Version="*" />
-    <PackageReference Include="IdeaStatica.BimApiLink" Version="*" />
+    <PackageReference Include="IdeaStatica.BimApi" Version="26.0.*" />
+    <PackageReference Include="IdeaStatica.BimApiLink" Version="26.0.*" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,14 +2,14 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IdeaStatiCa.Api" Version="*" />
-		<PackageReference Include="IdeaStatiCa.ConnectionApi" Version="*" />
-		<PackageReference Include="IdeaStatiCa.OpenModel" Version="*" />
-		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="*" />
+		<PackageReference Include="IdeaStatiCa.Api" Version="26.0.*" />
+		<PackageReference Include="IdeaStatiCa.ConnectionApi" Version="26.0.*" />
+		<PackageReference Include="IdeaStatiCa.OpenModel" Version="26.0.*" />
+		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="26.0.*" />
 	</ItemGroup>
 
 	<ItemGroup>
