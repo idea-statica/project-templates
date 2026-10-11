@@ -21,16 +21,24 @@ jobs:
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
-    - name: Check IdeaStatiCa package versions match MajorMinorVersion
+    - name: Check IdeaStatiCa package versions and setup paths match MajorMinorVersion
       run: |
         expected=$(sed -n 's:.*<MajorMinorVersion>\(.*\)</MajorMinorVersion>.*:\1:p' src/IdeaStatiCa.Dotnet.Templates.csproj)
         echo "MajorMinorVersion: $expected"
+        failed=0
         mismatches=$(grep -rniE 'Include="IdeaStatiCa\.[^"]+" Version="[^"]*"' src/templates --include=*.csproj | grep -viF "Version=\"$expected.") || true
         if [ -n "$mismatches" ]; then
           echo "::error::IdeaStatiCa package versions in templates must start with $expected."
           echo "$mismatches"
-          exit 1
+          failed=1
         fi
+        mismatches=$(grep -rnE 'IDEA StatiCa[\\/]+StatiCa [0-9]+\.[0-9]+' src/templates --include=*.cs --include=*.json | grep -vF "StatiCa $expected\"") || true
+        if [ -n "$mismatches" ]; then
+          echo "::error::IDEA StatiCa setup paths in templates must point to 'StatiCa $expected'."
+          echo "$mismatches"
+          failed=1
+        fi
+        exit $failed
 
     - name: Install dependencies
       run: dotnet restore src/IdeaStatiCa.Dotnet.Templates.csproj

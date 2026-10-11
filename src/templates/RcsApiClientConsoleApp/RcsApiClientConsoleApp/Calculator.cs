@@ -24,16 +24,16 @@ namespace RcsApiClientConsoleApp
 		}
 
 		/// <summary>
-		/// Calculate the ideaCon project and return the result
+		/// Calculate the IdeaRcs project and return the result
 		/// </summary>
-		/// <param name="rcsFile">The path to the the rcs project to calculte</param>
+		/// <param name="rcsFile">The path to the rcs project to calculate</param>
 		/// <param name="cancellationToken">Cancellation token</param>
 		/// <returns>Results</returns>
 		public async Task<List<RcsSectionResultOverview>> CalculateAsync(string rcsFile, CancellationToken cancellationToken)
 		{
-			_logger.LogInformation("Creating CreateConnectionApiClient");
+			_logger.LogInformation("Creating RcsApiClient");
 
-			// create ConnectionApiClient
+			// create RcsApiClient
 			using (var rcsClient = await _clientFactory.CreateApiClient())
 			{
 				// open the project and get its id

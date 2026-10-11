@@ -37,20 +37,20 @@ namespace RcsApiClientConsoleApp
 
 					try
 					{
-						// to attach the client to a running instance of IdeaStatiCa.ConnectionRestApi which is listening on http://localhost:5000
-						// clientFactory = new ConnectionApiServiceAttacher("http://localhost:5000");
+						// to attach the client to a running instance of IdeaStatiCa.RcsRestApi which is listening on http://localhost:5000
+						// clientFactory = new RcsApiServiceAttacher("http://localhost:5000");
 
-						// to run the private service IdeaStatiCa.ConnectionRestApi
-						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 25.1"; // path to the IdeaStatiCa.ConnectionRestApi.exe
+						// to run the private service IdeaStatiCa.RcsRestApi
+						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 26.0"; // path to the IdeaStatiCa.RcsRestApi.exe
 						Debug.Assert(File.Exists(Path.Combine(ideaStatiCaPath, "IdeaStatiCa.RcsRestApi.exe")), $"IdeaStatiCa.RcsRestApi.exe was not found in '{ideaStatiCaPath}'");
 
 						clientFactory = new RcsApiServiceRunner(ideaStatiCaPath);
 
 						using (var calculator = new Calculator(logger, clientFactory))
 						{
-							logger.LogInformation("Starting CBFEM calculation");
+							logger.LogInformation("Starting RCS calculation");
 							var res = await calculator.CalculateAsync(rcsFilePath, CancellationToken.None);
-							logger.LogInformation($"CBFEM calculation finished ");
+							logger.LogInformation($"RCS calculation finished ");
 
 							// Convert the result to a JSON string
 							string jsonString = JsonConvert.SerializeObject(res, Formatting.Indented);
