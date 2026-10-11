@@ -41,7 +41,7 @@ namespace RcsApiClientConsoleApp
 						// clientFactory = new ConnectionApiServiceAttacher("http://localhost:5000");
 
 						// to run the private service IdeaStatiCa.ConnectionRestApi
-						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 25.1"; // path to the IdeaStatiCa.ConnectionRestApi.exe
+						string ideaStatiCaPath = "C:\\Program Files\\IDEA StatiCa\\StatiCa 26.0"; // path to the IdeaStatiCa.RcsRestApi.exe
 						Debug.Assert(File.Exists(Path.Combine(ideaStatiCaPath, "IdeaStatiCa.RcsRestApi.exe")), $"IdeaStatiCa.RcsRestApi.exe was not found in '{ideaStatiCaPath}'");
 
 						clientFactory = new RcsApiServiceRunner(ideaStatiCaPath);
