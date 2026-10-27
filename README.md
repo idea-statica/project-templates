@@ -2,7 +2,7 @@
 
 Templates for creating projects for Idea StatiCa BIM link plugins and REST API clients.
 
-The templates reference IDEA StatiCa NuGet packages `26.0.*`, so the generated projects are compatible with IDEA StatiCa setup **26.0**.
+The templates reference IDEA StatiCa NuGet packages `26.1.*`, so the generated projects are compatible with IDEA StatiCa setup **26.1**.
 If you use a different IDEA StatiCa version, update the `IdeaStatiCa.*` package versions in the generated `.csproj` files to match it.
 
 Supported target frameworks (selected by the `-F` / `--Framework` option or in the Visual Studio *New project* dialog):
@@ -14,8 +14,8 @@ Supported target frameworks (selected by the `-F` / `--Framework` option or in t
 | IDEA StatiCa Connection Rest API Client Console | `conapiconsole` | `net10.0`, `net8.0`, `net48` |
 | IDEA StatiCa RCS Rest API client console App | `rcsclientconsole` | `net10.0`, `net8.0`, `net48` |
 
-> The CAD template targets `net10.0-windows10.0.22621.0` for .NET 10 because `IdeaStatiCa.ItemsSorter` 26.0 is published for this Windows platform version.
-> `IdeaStatiCa.ItemsSorter` 26.0 has no .NET 8 build, so with `net8.0-windows` the CAD template falls back to its .NET Framework assembly (warning NU1701).
+> The CAD template targets `net10.0-windows10.0.22621.0` for .NET 10 because `IdeaStatiCa.ItemsSorter` 26.1 is published for this Windows platform version.
+> `IdeaStatiCa.ItemsSorter` 26.1 has no .NET 8 build, so with `net8.0-windows` the CAD template falls back to its .NET Framework assembly (warning NU1701).
 
 Installation
 

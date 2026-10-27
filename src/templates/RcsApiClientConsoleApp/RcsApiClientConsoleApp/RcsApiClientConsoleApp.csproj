@@ -10,8 +10,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="26.0.*" />
-		<PackageReference Include="IdeaStatiCa.RcsApi" Version="26.0.*" />
+		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="26.1.*" />
+		<PackageReference Include="IdeaStatiCa.RcsApi" Version="26.1.*" />
 	</ItemGroup>
 
 	<ItemGroup>

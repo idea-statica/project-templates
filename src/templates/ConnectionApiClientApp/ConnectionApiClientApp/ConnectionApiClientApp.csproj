@@ -6,10 +6,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IdeaStatiCa.Api" Version="26.0.*" />
-		<PackageReference Include="IdeaStatiCa.ConnectionApi" Version="26.0.*" />
-		<PackageReference Include="IdeaStatiCa.OpenModel" Version="26.0.*" />
-		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="26.0.*" />
+		<PackageReference Include="IdeaStatiCa.Api" Version="26.1.*" />
+		<PackageReference Include="IdeaStatiCa.ConnectionApi" Version="26.1.*" />
+		<PackageReference Include="IdeaStatiCa.OpenModel" Version="26.1.*" />
+		<PackageReference Include="IdeaStatiCa.PluginLogger" Version="26.1.*" />
 	</ItemGroup>
 
 	<ItemGroup>
