@@ -10,7 +10,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IdeaStatica.BimApiLink" Version="26.0.*" />
+		<PackageReference Include="IdeaStatica.BimApiLink" Version="26.1.*" />
 	</ItemGroup>
 
 	<ItemGroup>

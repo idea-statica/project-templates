@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <!-- Major.Minor must match the IdeaStatiCa.* package versions referenced by the templates (e.g. 26.0.*) -->
-    <MajorMinorVersion>26.0</MajorMinorVersion>
+    <!-- Major.Minor must match the IdeaStatiCa.* package versions referenced by the templates (e.g. 26.1.*) -->
+    <MajorMinorVersion>26.1</MajorMinorVersion>
     <!-- Patch number is supplied by CI (-p:BuildNumber=<run number>) -->
     <BuildNumber Condition="'$(BuildNumber)' == ''">0</BuildNumber>
     <Version>$(MajorMinorVersion).$(BuildNumber)</Version>

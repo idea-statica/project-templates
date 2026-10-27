@@ -7,9 +7,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IdeaStatiCa.BimApiLink" Version="26.0.*" />
-		<PackageReference Include="IdeaStatiCa.Plugin" Version="26.0.*" />
-		<PackageReference Include="IdeaStatiCa.Public" Version="26.0.*" />
+		<PackageReference Include="IdeaStatiCa.BimApiLink" Version="26.1.*" />
+		<PackageReference Include="IdeaStatiCa.Plugin" Version="26.1.*" />
+		<PackageReference Include="IdeaStatiCa.Public" Version="26.1.*" />
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
 	</ItemGroup>
 

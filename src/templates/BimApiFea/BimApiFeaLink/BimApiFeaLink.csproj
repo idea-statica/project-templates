@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdeaStatica.BimApi" Version="26.0.*" />
-    <PackageReference Include="IdeaStatica.BimApiLink" Version="26.0.*" />
+    <PackageReference Include="IdeaStatica.BimApi" Version="26.1.*" />
+    <PackageReference Include="IdeaStatica.BimApiLink" Version="26.1.*" />
   </ItemGroup>
 
   <ItemGroup>
